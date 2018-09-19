@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: microservice-client-customer
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: AB051448
+Implementation-Vendor-Id: com.bjtu.cloud
+Build-Jdk: 1.8.0_151
+Implementation-URL: http://projects.spring.io/spring-boot/microservice
+ -client-customer/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

@@ -1,0 +1,41 @@
+server:
+  port: 7902
+spring:
+  application:
+    name: client-customer
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/myoa
+    username: root
+    password: duxue
+    driver-class-name: com.mysql.jdbc.Driver
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: DEBUG
+management:
+  security:
+    enabled: false
+eureka: 
+  client:
+#    enabled: false
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka,http://peer2:8762/eureka,http://peer3:8763/eureka
+      #http://user:123456@localhost:8761/eureka
+    prefer-same-zone-eureka: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+    metadata-map:
+      zone: zone1 #zone是eureka可以理解的元数据
+      author111: duxue #不会影响客户端行
+info:
+  build:
+    artifactId: microservice-client-customer
